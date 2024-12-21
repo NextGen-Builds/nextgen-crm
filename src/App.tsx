@@ -4,6 +4,10 @@ import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router";
 import {App as AntdApp} from "antd";
 
+
+import { dataProvider, liveProvider } from "./providers"
+import { useNotificationProvider } from "@refinedev/antd";
+
 function App() {
   return (
     <BrowserRouter>
@@ -12,9 +16,9 @@ function App() {
           <AntdApp>
             <DevtoolsProvider>
               <Refine
-                // dataProvider={dataProvider(gqlClient)}
-                // liveProvider={liveProvider(wsClient)}
-                // notificationProvider={useNotificationProvider}
+                dataProvider={dataProvider}
+                liveProvider={liveProvider}
+                notificationProvider={useNotificationProvider}
                 // routerProvider={routerBindings}
                 // authProvider={}
                 options={{
